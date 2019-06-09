@@ -5,6 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - RecipePickup
+  - ApplePickup
+  - RecipePickupList
+  - GameLevelObject
+  - Hazard
+  - Enemy
+  - Ground
+  - CarrotPickup
   layers:
   - Default
   - TransparentFX
@@ -19,9 +26,9 @@ TagManager:
   - Player
   - Background
   - Bullet
-  - 
-  - 
-  - 
+  - Hazards
+  - Enemy
+  - Feet
   - 
   - 
   - 

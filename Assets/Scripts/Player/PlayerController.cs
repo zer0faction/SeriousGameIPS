@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb2d;
     Animator myAnimator;
-    BoxCollider2D myBody;
-    CapsuleCollider2D myFeet;
+    BoxCollider2D myFeet;
     private Vector2 playerVelocity;  
 
     public GameObject carrotBullet;
@@ -21,52 +20,103 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D bulletRb;
 
     private GameObject pickupList;
+    private GameObject carrotGun;
+
+    private CarrotAmmoController carrotAmmoController;
+
+    private bool isDead;
+
+    private PlayerHealthController playerHealth;
 
     // Use this for initialization
     private void Start()
     {
+        isDead = false;
         rb2d = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-        myBody = GetComponent<BoxCollider2D>();
-        myFeet = GetComponent<CapsuleCollider2D>();
+        myFeet = this.gameObject.transform.GetChild(2).gameObject.GetComponent<BoxCollider2D>();
+        Debug.Log("haha" + myFeet);
+
         pickupList = this.gameObject.transform.GetChild(1).gameObject;
+        carrotGun = this.gameObject.transform.GetChild(0).gameObject;
+
+        playerHealth = gameObject.GetComponent<PlayerHealthController>();
+
+        carrotAmmoController = carrotGun.GetComponent<CarrotAmmoController>();
         //PickupRecipeScript = pickupList.GetComponent<PickupRecipeScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Run();
-        Jump();
-        FLipSprite();
-        FireCarrot();
+        if (!isDead)
+        {
+            Run();
+            Jump();
+            FireCarrot();
+            FLipSprite();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("name: " + other.gameObject.name);
         if (other.gameObject.CompareTag("RecipePickup"))
         {
             pickupList.GetComponent<RecipePickupListController>().recipeIsPickedUp(other.gameObject);
         }
         else if (other.gameObject.CompareTag("ApplePickup"))
         {
-            AppleCollected(1);
+            playerHealth.AddHealth();
+            pickupList.GetComponent<RecipePickupListController>().AppleIsPickedUp(other.gameObject);
+        }
+        //Een hazard killed je altijd
+        else if (other.gameObject.CompareTag("Hazard"))
+        {
+            playerHealth.RemoveAllHealth();
+            Die();
+        }
+        else if (other.gameObject.CompareTag("Enemy"))
+        {
+            playerHealth.RemoveHealth();
+        }
+        else if (other.gameObject.CompareTag("CarrotPickup"))
+        {
+            carrotAmmoController.AddCarrot();
+            Destroy(other.gameObject);
         }
     }
 
-    private void AppleCollected(float amount)
+    public void Die()
     {
-        pickupList.GetComponent<RecipePickupListController>().AppleIsPickedUp(amount);
+        isDead = true;
+
+        myAnimator.SetBool("Walking", false);
+        myAnimator.SetBool("Dead", true);
+       
+        rb2d.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+
+        Debug.Log("Player died");
+
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
     private void Run()
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal");
-
-        bool playerHasHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;  
-
-        playerVelocity = new Vector2(controlThrow * runSpeed, rb2d.velocity.y);
+      
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                playerVelocity = new Vector2(controlThrow * runSpeed * 3 / 2, rb2d.velocity.y);
+            }
+            else
+            {
+                playerVelocity = new Vector2(controlThrow * runSpeed, rb2d.velocity.y);
+            }
+        
         rb2d.velocity = playerVelocity;
+
+        bool playerHasHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("Walking", playerHasHorizontalSpeed);
     }
 
@@ -86,7 +136,7 @@ public class PlayerController : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
         if (playerHasHorizontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb2d.velocity.x) * 2, 2f);
+            transform.localScale = new Vector2(Mathf.Sign(rb2d.velocity.x) * 1, 1f);
         }
     }
 
@@ -94,27 +144,25 @@ public class PlayerController : MonoBehaviour
     {
         if (CrossPlatformInputManager.GetButtonDown("Fire1"))
         {
-            float rightIfHigherThanZero = bulletSpawnPoint.transform.position.x - gameObject.transform.position.x;           
-
-            if (rightIfHigherThanZero > 0)
+            if(carrotGun.GetComponent<CarrotAmmoController>().carrotAmount > 0)
             {
-                GameObject bullet = Instantiate(carrotBullet, new Vector2(bulletSpawnPoint.transform.position.x, bulletSpawnPoint.transform.position.y), Quaternion.Euler(0, 0, -90)) as GameObject;
-                bulletRb = bullet.GetComponent<Rigidbody2D>();
-                bulletRb.velocity = new Vector2(18, 0);
-            } else
-            {
-                GameObject bullet = Instantiate(carrotBullet, new Vector2(bulletSpawnPoint.transform.position.x, bulletSpawnPoint.transform.position.y), Quaternion.Euler(0, 0, 90)) as GameObject;
-                bulletRb = bullet.GetComponent<Rigidbody2D>();
-                bulletRb.velocity = new Vector2(-18, 0);
-            }         
-        }
-    }
+                float rightIfHigherThanZero = bulletSpawnPoint.transform.position.x - gameObject.transform.position.x;
 
-    private void HitByEnemy()
-    {
-        if (myBody.IsTouchingLayers(LayerMask.GetMask("Enemy")))
-        {
-            print("youve been hit");
+                if (rightIfHigherThanZero > 0)
+                {
+                    GameObject bullet = Instantiate(carrotBullet, new Vector2(bulletSpawnPoint.transform.position.x, bulletSpawnPoint.transform.position.y), Quaternion.Euler(0, 0, -90)) as GameObject;
+                    bulletRb = bullet.GetComponent<Rigidbody2D>();
+                    bulletRb.velocity = new Vector2(18, 0);
+                    carrotAmmoController.RemoveCarrot();
+                }
+                else
+                {
+                    GameObject bullet = Instantiate(carrotBullet, new Vector2(bulletSpawnPoint.transform.position.x, bulletSpawnPoint.transform.position.y), Quaternion.Euler(0, 0, 90)) as GameObject;
+                    bulletRb = bullet.GetComponent<Rigidbody2D>();
+                    bulletRb.velocity = new Vector2(-18, 0);
+                    carrotAmmoController.RemoveCarrot();
+                }
+            }
         }
     }
 }
