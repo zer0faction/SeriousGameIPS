@@ -12,7 +12,7 @@ public class CarrotAmmoController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        carrotAmount = 10;
+        carrotAmount = 0;
         carrotAmountUi.text = carrotAmount + " X";
     }
 
