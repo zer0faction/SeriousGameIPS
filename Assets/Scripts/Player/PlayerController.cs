@@ -27,6 +27,13 @@ public class PlayerController : MonoBehaviour
     private bool isDead;
 
     private PlayerHealthController playerHealth;
+    private PlayerStaminaScript playerStamina;
+
+    private float tempTimeForStaminaRegen;
+    private float tempTimeForStaminaLoss;
+
+    private bool running;
+    private bool cooldownTime;
 
     // Use this for initialization
     private void Start()
@@ -41,6 +48,7 @@ public class PlayerController : MonoBehaviour
         carrotGun = this.gameObject.transform.GetChild(0).gameObject;
 
         playerHealth = gameObject.GetComponent<PlayerHealthController>();
+        playerStamina = gameObject.GetComponent<PlayerStaminaScript>();
 
         carrotAmmoController = carrotGun.GetComponent<CarrotAmmoController>();
         //PickupRecipeScript = pickupList.GetComponent<PickupRecipeScript>();
@@ -55,6 +63,20 @@ public class PlayerController : MonoBehaviour
             Jump();
             FireCarrot();
             FLipSprite();
+           
+        }
+
+        tempTimeForStaminaLoss += Time.deltaTime;
+        tempTimeForStaminaRegen += Time.deltaTime;
+        if (tempTimeForStaminaRegen > 0.05 && cooldownTime == false)
+        {
+            tempTimeForStaminaRegen = 0;
+            playerStamina.AddStamina();
+        }
+
+        if (cooldownTime)
+        {
+            StartCoroutine(ExecuteAfterTime(2));
         }
     }
 
@@ -105,12 +127,22 @@ public class PlayerController : MonoBehaviour
     {
         float controlThrow = CrossPlatformInputManager.GetAxis("Horizontal");
       
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && playerStamina.AllowedToSprint())
             {
+                running = true;
+                cooldownTime = true;
+
                 playerVelocity = new Vector2(controlThrow * runSpeed * 3 / 2, rb2d.velocity.y);
+                
+                if (tempTimeForStaminaLoss > 0.02)
+                {
+                    tempTimeForStaminaLoss = 0;
+                    playerStamina.RemoveStamina();
+                }
             }
             else
             {
+                running = false;
                 playerVelocity = new Vector2(controlThrow * runSpeed, rb2d.velocity.y);
             }
         
@@ -118,6 +150,14 @@ public class PlayerController : MonoBehaviour
 
         bool playerHasHorizontalSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("Walking", playerHasHorizontalSpeed);
+    }
+
+    IEnumerator ExecuteAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+
+        cooldownTime = false;
+        // Code to execute after the delay
     }
 
     private void Jump()

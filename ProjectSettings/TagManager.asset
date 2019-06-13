@@ -12,6 +12,7 @@ TagManager:
   - Enemy
   - Ground
   - CarrotPickup
+  - PlayerFeet
   layers:
   - Default
   - TransparentFX
