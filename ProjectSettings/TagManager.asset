@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - CarrotPickup
   - PlayerFeet
+  - FitnessSchool
   layers:
   - Default
   - TransparentFX

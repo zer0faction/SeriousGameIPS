@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
@@ -35,9 +36,12 @@ public class PlayerController : MonoBehaviour
     private bool running;
     private bool cooldownTime;
 
+    private bool StaminaHasBeenAdded;
+
     // Use this for initialization
     private void Start()
     {
+        StaminaHasBeenAdded = false;
         isDead = false;
         rb2d = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
@@ -107,6 +111,14 @@ public class PlayerController : MonoBehaviour
             carrotAmmoController.AddCarrot();
             Destroy(other.gameObject);
         }
+        else if (other.gameObject.CompareTag("FitnessSchool"))
+        {
+            if (!StaminaHasBeenAdded)
+            {
+                StaminaHasBeenAdded = true;
+                playerStamina.HigherMaxStamina();
+            }
+        }
     }
 
     public void Die()
@@ -121,6 +133,9 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Player died");
 
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
+        Scene loadedLevel = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(loadedLevel.buildIndex);
     }
 
     private void Run()

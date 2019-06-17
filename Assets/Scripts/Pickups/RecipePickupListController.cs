@@ -11,6 +11,8 @@ public class RecipePickup
 
 public class RecipePickupListController : MonoBehaviour
 {
+    private GameObject dontDestroy;
+
     //Punten bijhouden
     [SerializeField] float amountOfRecipesInLevel;
     [SerializeField] float amountOfApplesInLevel;
@@ -19,13 +21,15 @@ public class RecipePickupListController : MonoBehaviour
     private ArrayList pickedUpRecipes;
     public RecipePickup[] recipes;
 
+    [SerializeField] private Sprite recipeImage;
+
     //Etc
     [SerializeField] string recipeName;
     [SerializeField] string recipeDescription;
     [SerializeField] string tipOfTheDayString;
 
     //GameObject van gehele level. Wordt uitgezet als level is afgelopen
-    private GameObject GameLevelObject;
+    [SerializeField]  private GameObject GameLevelObject;
 
     //UI dingen
     //In game
@@ -38,18 +42,19 @@ public class RecipePickupListController : MonoBehaviour
 
     //De 2 gameobjecten die gebruikt worden om de UI aan en uit te zetten
     public GameObject UiRecipeList;
-    private GameObject gameplayUi;
-    private GameObject levelFinishUi;
+    [SerializeField]  private GameObject gameplayUi;
+    [SerializeField]  private GameObject levelFinishUi;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameLevelObject = GameObject.FindGameObjectWithTag("GameLevelObject");
+        dontDestroy = GameObject.Find("DontDestroy");
+        //GameLevelObject = GameObject.FindGameObjectWithTag("GameLevelObject");
         applesCollected = 0;
         pickedUpRecipes = new ArrayList();
         recipeCollectedUiText.text = recipesCollected + "/" + amountOfRecipesInLevel + " recepten gevonden";
-        gameplayUi = UiRecipeList.gameObject.transform.GetChild(0).gameObject;
-        levelFinishUi = UiRecipeList.gameObject.transform.GetChild(1).gameObject;
+        //gameplayUi = UiRecipeList.gameObject.transform.GetChild(0).gameObject;
+        //levelFinishUi = UiRecipeList.gameObject.transform.GetChild(1).gameObject;
 
         levelFinishUi.SetActive(false);
         gameplayUi.SetActive(true);
@@ -81,6 +86,10 @@ public class RecipePickupListController : MonoBehaviour
             gameplayUi.SetActive(false);
             GameLevelObject.SetActive(false);
             levelFinishUi.SetActive(true);
+
+            dontDestroy.GetComponent<DontDestroy>().AddTip(tipOfTheDayString);
+            dontDestroy.GetComponent<DontDestroy>().AddRecipe(recipeName, recipeDescription, recipeImage);
+
             return true;
         }
         else

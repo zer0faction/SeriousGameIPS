@@ -15,6 +15,7 @@ public class EndLevelController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            Debug.Log("LEVEL FINISH");
             if (recipeListController.GetComponent<RecipePickupListController>().LevelEnded())
             {
                 //if true: gebeurd in recipepickuplistcontroller
