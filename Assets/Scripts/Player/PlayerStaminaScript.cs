@@ -11,10 +11,13 @@ public class PlayerStaminaScript : MonoBehaviour
     [SerializeField]
     private Text textFieldStamina;
 
+    [SerializeField]
+    private float maxValue;
+
     // Start is called before the first frame update
     void Start()
     {
-        staminaSlider.maxValue = 100;
+        staminaSlider.maxValue = maxValue;
         staminaSlider.value = staminaSlider.maxValue;
         textFieldStamina.text = staminaSlider.maxValue+"";
     }
@@ -33,7 +36,11 @@ public class PlayerStaminaScript : MonoBehaviour
 
     public void HigherMaxStamina()
     {
-        staminaSlider.maxValue = staminaSlider.maxValue + 10;
+        textFieldStamina.text = staminaSlider.maxValue + "";
+        staminaSlider.maxValue = staminaSlider.maxValue + 100;
+        staminaSlider.value = staminaSlider.maxValue;
+
+        //staminaSlider.handleRect.sizeDelta = new Vector2(300, 80);
     }
 
     public bool AllowedToSprint()
