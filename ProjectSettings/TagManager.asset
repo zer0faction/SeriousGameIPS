@@ -57,6 +57,9 @@ TagManager:
   - name: Foreground
     uniqueID: 3850101805
     locked: 0
+  - name: Shadowground
+    uniqueID: 2757749215
+    locked: 0
   - name: Gun
     uniqueID: 2624847389
     locked: 0

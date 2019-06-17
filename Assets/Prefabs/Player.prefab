@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7007346076148333401
+--- !u!1 &5246787724842677080
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,36 +8,36 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7007346076148333400}
-  - component: {fileID: 7007346076148333407}
+  - component: {fileID: 5246787724842677081}
+  - component: {fileID: 5246787724842677086}
   m_Layer: 15
   m_Name: Feet
-  m_TagString: Untagged
+  m_TagString: PlayerFeet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7007346076148333400
+--- !u!4 &5246787724842677081
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076148333401}
+  m_GameObject: {fileID: 5246787724842677080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 7007346076333078416}
+  m_Father: {fileID: 5246787726101168017}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &7007346076148333407
+--- !u!61 &5246787724842677086
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076148333401}
+  m_GameObject: {fileID: 5246787724842677080}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -57,7 +57,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5117669, y: 0.013914585}
   m_EdgeRadius: 0
---- !u!1 &7007346076333078418
+--- !u!1 &5246787725712884011
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,13 +65,107 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7007346076333078416}
-  - component: {fileID: 7007346076333078423}
-  - component: {fileID: 7007346076333078417}
-  - component: {fileID: 7007346076333078422}
-  - component: {fileID: 7007346076333078421}
-  - component: {fileID: 7007346076333078379}
-  - component: {fileID: 7007346076333078378}
+  - component: {fileID: 5246787725712884008}
+  m_Layer: 10
+  m_Name: BulletSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5246787725712884008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246787725712884011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.174, y: 0.039, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5246787726507289659}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5246787726057495970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5246787726057495968}
+  - component: {fileID: 5246787726057495971}
+  m_Layer: 0
+  m_Name: RecipePickupList
+  m_TagString: RecipePickupList
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5246787726057495968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246787726057495970}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.747, y: 1.32, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 5246787726101168017}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5246787726057495971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246787726057495970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843fc9c6d3ed0d94a86413fe44427cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfRecipesInLevel: 3
+  amountOfApplesInLevel: 2
+  recipes:
+  - pickup: {fileID: 0}
+  - pickup: {fileID: 0}
+  - pickup: {fileID: 0}
+  recipeName: Hollandse Rodevruchtencoupe
+  recipeDescription: "Pers de sinaasappel uit. Breng in een steelpan de frambozen,
+    2 el sinaasappelsap (per 6 personen) en \u2153 van de kristalsuiker aan de kook.
+    Laat 2 min. koken. Neem de pan van het vuur en laat in 15 min. afkoelen tot het
+    frambozenmengsel lauw is. Verdeel de blauwe bessen over de glazen. Klop de slagroom
+    met de rest van de kristalsuiker en de vanillesuiker stijf. Spatel de slagroom
+    door de kwark. Verdeel de roomkwark over de glazen. Schep de lauwe frambozen erover."
+  tipOfTheDayString: "Wist je dat er in \xE9\xE9n blikje cola bijna 35 gram suiker
+    zit? Dat zijn wel 7 suikerklontjes.."
+  recipeCollectedUiText: {fileID: 0}
+  recipeNameUiText: {fileID: 0}
+  tipOfTheDay: {fileID: 0}
+  applesCollectedUiText: {fileID: 0}
+  UiRecipeList: {fileID: 0}
+--- !u!1 &5246787726101168019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5246787726101168017}
+  - component: {fileID: 5246787726101168022}
+  - component: {fileID: 5246787726101168016}
+  - component: {fileID: 5246787726101168023}
+  - component: {fileID: 5246787726101168020}
+  - component: {fileID: 5246787726101167978}
+  - component: {fileID: 5246787726101167979}
+  - component: {fileID: 5246787726101168021}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -79,30 +173,30 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7007346076333078416
+--- !u!4 &5246787726101168017
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -575.2904, y: -301.66, z: 136.90643}
+  m_LocalPosition: {x: 138.23, y: -1.02, z: 26.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7007346076742345786}
-  - {fileID: 7007346077366326689}
-  - {fileID: 7007346076148333400}
+  - {fileID: 5246787726507289659}
+  - {fileID: 5246787726057495968}
+  - {fileID: 5246787724842677081}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7007346076333078423
+--- !u!212 &5246787726101168022
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -144,14 +238,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7007346076333078417
+--- !u!95 &5246787726101168016
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 582c0a9ca493d3847b34b217047beaaf, type: 2}
@@ -163,14 +257,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!50 &7007346076333078422
+--- !u!50 &5246787726101168023
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -184,13 +278,13 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!70 &7007346076333078421
+--- !u!70 &5246787726101168020
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -200,13 +294,13 @@ CapsuleCollider2D:
   m_Offset: {x: -0.032464117, y: 0.80593944}
   m_Size: {x: 0.51999027, y: 1.1694288}
   m_Direction: 0
---- !u!114 &7007346076333078379
+--- !u!114 &5246787726101167978
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 504391917e3715c479bb0ddd42432b0d, type: 3}
@@ -216,14 +310,14 @@ MonoBehaviour:
   jumpSpeed: 23
   carrotBullet: {fileID: 8723870474370883360, guid: 09c6678e840dc2044a56bd9ede020a1d,
     type: 3}
-  bulletSpawnPoint: {fileID: 7007346077017033002}
---- !u!114 &7007346076333078378
+  bulletSpawnPoint: {fileID: 5246787725712884011}
+--- !u!114 &5246787726101167979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076333078418}
+  m_GameObject: {fileID: 5246787726101168019}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0830b567a851f214cac2b6abb03936a9, type: 3}
@@ -235,7 +329,21 @@ MonoBehaviour:
   nonFullHealthHeart1: {fileID: 0}
   nonFullHealthHeart2: {fileID: 0}
   nonFullHealthHeart3: {fileID: 0}
---- !u!1 &7007346076742345787
+--- !u!114 &5246787726101168021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5246787726101168019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dbf21238773554e92f690507929e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  staminaSlider: {fileID: 0}
+  textFieldStamina: {fileID: 0}
+--- !u!1 &5246787726507289658
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -243,9 +351,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7007346076742345786}
-  - component: {fileID: 7007346076742345785}
-  - component: {fileID: 7007346076742345784}
+  - component: {fileID: 5246787726507289659}
+  - component: {fileID: 5246787726507289656}
+  - component: {fileID: 5246787726507289657}
   m_Layer: 10
   m_Name: CarrotGun
   m_TagString: Untagged
@@ -253,28 +361,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7007346076742345786
+--- !u!4 &5246787726507289659
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076742345787}
+  m_GameObject: {fileID: 5246787726507289658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.102, y: 0.542, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7007346077017033001}
-  m_Father: {fileID: 7007346076333078416}
+  - {fileID: 5246787725712884008}
+  m_Father: {fileID: 5246787726101168017}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7007346076742345785
+--- !u!212 &5246787726507289656
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076742345787}
+  m_GameObject: {fileID: 5246787726507289658}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -317,13 +425,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7007346076742345784
+--- !u!114 &5246787726507289657
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346076742345787}
+  m_GameObject: {fileID: 5246787726507289658}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae8d8f1ecb2988541adb5311353923cf, type: 3}
@@ -331,90 +439,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carrotAmountUi: {fileID: 0}
   carrotAmount: 0
---- !u!1 &7007346077017033002
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7007346077017033001}
-  m_Layer: 10
-  m_Name: BulletSpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7007346077017033001
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346077017033002}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.174, y: 0.039, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7007346076742345786}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7007346077366326691
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7007346077366326689}
-  - component: {fileID: 7007346077366326690}
-  m_Layer: 0
-  m_Name: RecipePickupList
-  m_TagString: RecipePickupList
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7007346077366326689
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346077366326691}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.747, y: 1.32, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_Children: []
-  m_Father: {fileID: 7007346076333078416}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7007346077366326690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7007346077366326691}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 843fc9c6d3ed0d94a86413fe44427cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  amountOfRecipesInLevel: 2
-  amountOfApplesInLevel: 3
-  recipes:
-  - pickup: {fileID: 0}
-  - pickup: {fileID: 0}
-  recipeName: MeloenTaart
-  recipeDescription: Stop 1 meloen in een taart en je hebt meloentaart
-  tipOfTheDayString: "Wist je dat er in \xE9\xE9n blikje cola bijna 35 gram suiker
-    zit? Dat zijn wel 7 suikerklontjes.."
-  recipeCollectedUiText: {fileID: 0}
-  recipeNameUiText: {fileID: 0}
-  tipOfTheDay: {fileID: 0}
-  applesCollectedUiText: {fileID: 0}
-  UiRecipeList: {fileID: 0}

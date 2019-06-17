@@ -12,10 +12,17 @@ public class BurgerBossController : MonoBehaviour
 
     private Vector3 velocity;
     private bool onGround;
+    private bool doingAttack;
+
+    private GameObject shadowFromAttackGO;
+    private GameObject shadowFromAttack;
 
     // Start is called before the first frame update
     void Start()
     {
+        shadowFromAttackGO = transform.GetChild(0).gameObject;
+        shadowFromAttack = shadowFromAttackGO.transform.GetChild(0).gameObject;
+
         onGround = true;
         rb2d = GetComponent<Rigidbody2D>();
         velocity = new Vector3(speed, rb2d.velocity.y, 0);
@@ -30,7 +37,9 @@ public class BurgerBossController : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
+        //InvokeRepeating("HighjumpAttack", 3f, 3f);
         InvokeRepeating("Jump", 0f, 1f);
+        
     }
 
     // Update is called once per frame
@@ -93,5 +102,12 @@ public class BurgerBossController : MonoBehaviour
         yield return new WaitForSeconds(time);
 
         onGround = false;
+    }
+
+    private void HighjumpAttack()
+    {
+        Debug.Log("highattack");
+        Vector2 JumpVelocityToAdd = new Vector2(0f, 1000);
+        rb2d.velocity += JumpVelocityToAdd;
     }
 }
