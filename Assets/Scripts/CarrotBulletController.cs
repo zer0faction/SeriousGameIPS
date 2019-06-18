@@ -10,8 +10,9 @@ public class CarrotBulletController : MonoBehaviour
         GameObject objectCollided = collider.gameObject;
         if (objectCollided.CompareTag("Enemy"))
         {
+            Destroy(gameObject);
             objectCollided.GetComponent<HealthController>().RemoveHealth();
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
