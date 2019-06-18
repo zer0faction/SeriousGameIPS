@@ -15,16 +15,16 @@ public class LevelMenuController : MonoBehaviour
     [SerializeField] private GameObject UICanvasMainMenu;
 
     private GameObject dontDestroy;
-    private ArrayList unlockedlevels;
-    private ArrayList availableLevels;
+    private List<int> unlockedlevels;
+    private List<int> availableLevels;
 
     // Start is called before the first frame update
     void Start()
     {
-        availableLevels = new ArrayList();
-        unlockedlevels = new ArrayList();
+        availableLevels = new List<int>();
+        unlockedlevels = new List<int>();
 
-        level1Button.enabled = false;
+		level1Button.enabled = false;
         level2Button.enabled = false;
         level3Button.enabled = false;
         level1Button.gameObject.SetActive(false);
@@ -43,23 +43,26 @@ public class LevelMenuController : MonoBehaviour
         dontDestroy = GameObject.Find("DontDestroy");
         unlockedlevels = dontDestroy.GetComponent<DontDestroy>().GetUnlockedLevels();
 
-        foreach(int unlocked in unlockedlevels)
+		//dontDestroy.GetComponent<DontDestroy>().UnLocklevel(2);
+		//dontDestroy.GetComponent<DontDestroy>().UnLocklevel(3);
+
+		Debug.Log(unlockedlevels);
+
+		foreach (int unlocked in unlockedlevels)
         {
-            if(unlocked == 1)
+			Debug.Log(unlocked + "unlocked");
+
+			if (unlocked == 1)
             {
                 Debug.Log("Level 1 unlocked");
                 level1Button.enabled = true;
                 level1Button.gameObject.SetActive(true);
-            }
-
-            if (unlocked == 2)
+            } else if (unlocked == 2)
             {
                 Debug.Log("Level 2 unlocked");
                 level2Button.enabled = true;
                 level2Button.gameObject.SetActive(true);
-            }
-
-            if (unlocked == 3)
+            } else if (unlocked == 3)
             {
                 Debug.Log("Level 3 unlocked");
                 level3Button.enabled = true;

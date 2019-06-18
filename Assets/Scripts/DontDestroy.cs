@@ -13,7 +13,7 @@ public class Recipe
 
 public class DontDestroy : MonoBehaviour
 {
-    private ArrayList UnLockedLevels;
+    public List<int> UnLockedLevels;
     private List<Recipe> UnlockedRecipes;
     private List<string> tips;
 
@@ -23,16 +23,18 @@ public class DontDestroy : MonoBehaviour
 
     private void Awake()
     {
-        UnLockedLevels = new ArrayList();
+        UnLockedLevels = new List<int>();
         UnlockedRecipes = new List<Recipe>();
         tips = new List<string>();
 
         UnLockedLevels.Add(1);
+		//UnLockedLevels.Add(2);
+		//UnLockedLevels.Add(3);
 
-        DontDestroyOnLoad(this.gameObject);
+		DontDestroyOnLoad(this.gameObject);
     }
 
-    public ArrayList GetUnlockedLevels()
+    public List<int> GetUnlockedLevels()
     {
         return UnLockedLevels;
     }
@@ -47,7 +49,7 @@ public class DontDestroy : MonoBehaviour
         return tips;
     }
 
-    public void UnLocklevel(float level)
+    public void UnLocklevel(int level)
     {
         UnLockedLevels.Add(level);
     }
