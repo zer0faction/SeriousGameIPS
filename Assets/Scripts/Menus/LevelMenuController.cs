@@ -1,0 +1,90 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+public class LevelMenuController : MonoBehaviour
+{
+    //Buttons
+    [SerializeField] private Button level1Button;
+    [SerializeField] private Button level2Button;
+    [SerializeField] private Button level3Button;
+    [SerializeField] private Button level4Button;
+    [SerializeField] private Button backButton;
+
+    [SerializeField] private GameObject UICanvasMainMenu;
+
+    private GameObject dontDestroy;
+    private List<int> unlockedlevels;
+    private List<int> availableLevels;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        availableLevels = new List<int>();
+        unlockedlevels = new List<int>();
+
+		level1Button.enabled = false;
+        level2Button.enabled = false;
+        level3Button.enabled = false;
+        level4Button.enabled = false;
+        level1Button.gameObject.SetActive(false);
+        level2Button.gameObject.SetActive(false);
+        level3Button.gameObject.SetActive(false);
+        level4Button.gameObject.SetActive(false);
+
+        availableLevels.Add(1);
+        availableLevels.Add(2);
+        availableLevels.Add(3);
+
+        level1Button.onClick.AddListener(delegate { GoToLevel(1); });
+        level2Button.onClick.AddListener(delegate { GoToLevel(2); });
+        level3Button.onClick.AddListener(delegate { GoToLevel(3); });
+        level4Button.onClick.AddListener(delegate { GoToLevel(4); });
+        backButton.onClick.AddListener(BackToMainMenu);
+
+        dontDestroy = GameObject.Find("DontDestroy");
+        unlockedlevels = dontDestroy.GetComponent<DontDestroy>().GetUnlockedLevels();
+
+        Debug.Log(unlockedlevels);
+
+		foreach (int unlocked in unlockedlevels)
+        {
+			Debug.Log(unlocked + "unlocked");
+
+			if (unlocked == 1)
+            {
+                Debug.Log("Level 1 unlocked");
+                level1Button.enabled = true;
+                level1Button.gameObject.SetActive(true);
+            } else if (unlocked == 2)
+            {
+                Debug.Log("Level 2 unlocked");
+                level2Button.enabled = true;
+                level2Button.gameObject.SetActive(true);
+            } else if (unlocked == 3)
+            {
+                Debug.Log("Level 3 unlocked");
+                level3Button.enabled = true;
+                level3Button.gameObject.SetActive(true);
+            } else if (unlocked == 4)
+            {
+                Debug.Log("Level 4 unlocked");
+                level4Button.enabled = true;
+                level4Button.gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void GoToLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
+
+    private void BackToMainMenu()
+    {
+        gameObject.SetActive(false);
+        UICanvasMainMenu.SetActive(true);
+    }
+}

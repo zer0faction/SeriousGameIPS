@@ -1,0 +1,509 @@
+fileFormatVersion: 2
+guid: 6d80c1b2da7481441ac6812460f1af1d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1792016059839428380
+    second: hamburgerrrrr_0
+  - first:
+      213: 2827634758254968621
+    second: hamburgerrrrr_1
+  - first:
+      213: 1284729227441006532
+    second: hamburgerrrrr_2
+  - first:
+      213: 8124332141756662362
+    second: hamburgerrrrr_3
+  - first:
+      213: -3710613634746193481
+    second: hamburgerrrrr_4
+  - first:
+      213: -6578770487580784475
+    second: hamburgerrrrr_5
+  - first:
+      213: 4579906744617732719
+    second: hamburgerrrrr_6
+  - first:
+      213: -4629214815725166876
+    second: hamburgerrrrr_8
+  - first:
+      213: 2989411987902472113
+    second: hamburgerrrrr_9
+  - first:
+      213: -450128569563282587
+    second: hamburgerrrrr_10
+  - first:
+      213: 6123237239622266824
+    second: hamburgerrrrr_11
+  - first:
+      213: 604125256179291993
+    second: hamburgerrrrr_12
+  - first:
+      213: -8077551854339295975
+    second: hamburgerrrrr_13
+  - first:
+      213: -3284088880496270221
+    second: hamburgerrrrr_14
+  - first:
+      213: -5625325324393081487
+    second: hamburgerrrrr_15
+  - first:
+      213: -746558870978797625
+    second: hamburgerrrrr_16
+  - first:
+      213: -7699914418754954767
+    second: hamburgerrrrr_17
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 2
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hamburgerrrrr_0
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 445
+        width: 94
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e974c62b4a6805a4bb1e6879206e6707
+      internalID: 1792016059839428380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_1
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 451
+        width: 93
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3ed74abb677c2438d534c7b227aa9b
+      internalID: 2827634758254968621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_2
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 601
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a4af4d2dea747a4296423c7403c63c0
+      internalID: 1284729227441006532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_3
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 460
+        width: 91
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2802375f837245448f309e38cde7535
+      internalID: 8124332141756662362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 465
+        width: 86
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d84d00aab130fb45bec35518cc765d7
+      internalID: -3710613634746193481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_5
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 570
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dcfb2b9c53c704d9d892c45ebc5565
+      internalID: -6578770487580784475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_6
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 453
+        width: 96
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b3452f262c8324f84024ad178b76c5
+      internalID: 4579906744617732719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 282
+        width: 122
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746cb02c985a59f48a6c2bde660c80e3
+      internalID: -4629214815725166876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 341
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f326494a4b400744a7fe9abfb4a9850
+      internalID: 2989411987902472113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_10
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 281
+        width: 185
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7be7153cf35de94db46c5565d088838
+      internalID: -450128569563282587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_11
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 275
+        width: 222
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 373712e517a3beb498fb2ad40d6f91e5
+      internalID: 6123237239622266824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_12
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 281
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45911fa09f9395446adcec91f06d037a
+      internalID: 604125256179291993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_13
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 281
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 333a0e17c71d8ed4c9adddaaed5f5b15
+      internalID: -8077551854339295975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_14
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 78
+        width: 123
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0868f3fca09e0545a4ca45c11b7b1ac
+      internalID: -3284088880496270221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 78
+        width: 123
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116118c28bb4f0a4880c012e0941b155
+      internalID: -5625325324393081487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_16
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 73
+        width: 124
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fab0a16f949b54ab906481ff7c6721
+      internalID: -746558870978797625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hamburgerrrrr_17
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 73
+        width: 123
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba85255638c0bb4b8576defd40678d5
+      internalID: -7699914418754954767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f0d2022e7c4b477439e826ad87c0082f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
