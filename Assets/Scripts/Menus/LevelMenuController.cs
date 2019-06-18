@@ -10,6 +10,7 @@ public class LevelMenuController : MonoBehaviour
     [SerializeField] private Button level1Button;
     [SerializeField] private Button level2Button;
     [SerializeField] private Button level3Button;
+    [SerializeField] private Button level4Button;
     [SerializeField] private Button backButton;
 
     [SerializeField] private GameObject UICanvasMainMenu;
@@ -27,9 +28,11 @@ public class LevelMenuController : MonoBehaviour
 		level1Button.enabled = false;
         level2Button.enabled = false;
         level3Button.enabled = false;
+        level4Button.enabled = false;
         level1Button.gameObject.SetActive(false);
         level2Button.gameObject.SetActive(false);
         level3Button.gameObject.SetActive(false);
+        level4Button.gameObject.SetActive(false);
 
         availableLevels.Add(1);
         availableLevels.Add(2);
@@ -38,15 +41,13 @@ public class LevelMenuController : MonoBehaviour
         level1Button.onClick.AddListener(delegate { GoToLevel(1); });
         level2Button.onClick.AddListener(delegate { GoToLevel(2); });
         level3Button.onClick.AddListener(delegate { GoToLevel(3); });
+        level4Button.onClick.AddListener(delegate { GoToLevel(4); });
         backButton.onClick.AddListener(BackToMainMenu);
 
         dontDestroy = GameObject.Find("DontDestroy");
         unlockedlevels = dontDestroy.GetComponent<DontDestroy>().GetUnlockedLevels();
 
-		//dontDestroy.GetComponent<DontDestroy>().UnLocklevel(2);
-		//dontDestroy.GetComponent<DontDestroy>().UnLocklevel(3);
-
-		Debug.Log(unlockedlevels);
+        Debug.Log(unlockedlevels);
 
 		foreach (int unlocked in unlockedlevels)
         {
@@ -67,6 +68,11 @@ public class LevelMenuController : MonoBehaviour
                 Debug.Log("Level 3 unlocked");
                 level3Button.enabled = true;
                 level3Button.gameObject.SetActive(true);
+            } else if (unlocked == 4)
+            {
+                Debug.Log("Level 4 unlocked");
+                level4Button.enabled = true;
+                level4Button.gameObject.SetActive(true);
             }
         }
     }
