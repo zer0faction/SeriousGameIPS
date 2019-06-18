@@ -19,5 +19,5 @@ public class Behavior : MonoBehaviour
         GameObject bullet = Instantiate(FireballWithGravity, new Vector2(transform.position.x, transform.position.y), Quaternion.Euler(0, 0, 270)) as GameObject;
         bulletRb = bullet.GetComponent<Rigidbody2D>();
         bulletRb.velocity = new Vector2(0, 40);
-    }
+    }
 }
