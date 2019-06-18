@@ -5,10 +5,17 @@ using UnityEngine;
 
 public class ai : MonoBehaviour
 {
+    public Transform burger;
+    public Camera cam;
+    float shake = 0;
+    Rigidbody burgerbody;
+    float shakeAmount = 1;
+    float decreaseFactor  = 1;
     public Transform target;
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
-
+    private Vector3 posA = Vector3.zero; //Vector3.zero is for initialization
+    private Vector3 posB = Vector3.zero;
     Path path;
     int currentWayPoint = 0;
     bool reachedEndOfPath = false;
@@ -18,14 +25,31 @@ public class ai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        burgerbody = burger.GetComponent<Rigidbody>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, .5f);
+        Invoke("ChangeObject", 8);
 
     }
 
-    void UpdatePath()
+    void ChangeObject()
+    {
+        cam.transform.localPosition = Random.insideUnitSphere * shakeAmount;
+        shake -= Time.deltaTime * decreaseFactor;
+        posA = transform.position;
+        posB = burger.transform.position;
+        transform.position = posB;
+        burger.transform.position = new Vector3(posA.x,3);
+        Invoke("move", 2);
+    }
+    void move()
+    {
+        burger.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        burger.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+    }
+
+        void UpdatePath()
     {
         if (seeker.IsDone())
         {

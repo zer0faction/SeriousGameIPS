@@ -13,15 +13,19 @@ public class BurgerBossController : MonoBehaviour
     private Vector3 velocity;
     private bool onGround;
     private bool doingAttack;
+    public GameObject healthBarGameObject;
+    public GameObject endUi;
 
-    private GameObject shadowFromAttackGO;
-    private GameObject shadowFromAttack;
+    //private GameObject shadowFromAttackGO;
+    // private GameObject shadowFromAttack;
 
     // Start is called before the first frame update
+
+
     void Start()
     {
-        shadowFromAttackGO = transform.GetChild(0).gameObject;
-        shadowFromAttack = shadowFromAttackGO.transform.GetChild(0).gameObject;
+       // shadowFromAttackGO = transform.GetChild(0).gameObject;
+       // shadowFromAttack = shadowFromAttackGO.transform.GetChild(0).gameObject;
 
         onGround = true;
         rb2d = GetComponent<Rigidbody2D>();
@@ -38,7 +42,7 @@ public class BurgerBossController : MonoBehaviour
         }
 
         //InvokeRepeating("HighjumpAttack", 3f, 3f);
-        InvokeRepeating("Jump", 0f, 1f);
+        InvokeRepeating("Jump", 0f, 2f);
         
     }
 
@@ -59,6 +63,18 @@ public class BurgerBossController : MonoBehaviour
         if (other.gameObject.CompareTag("Ground"))
         {
             SwitchPosition();
+        }
+        if (other.gameObject.CompareTag("CarrotBullet"))
+        {
+            Debug.Log("Hier gebeurd t");
+            healthBarGameObject.GetComponent<HealthBarScript>().health -= 4f;
+            Debug.Log(healthBarGameObject.GetComponent<HealthBarScript>().health + " HEALTH");
+
+            if(healthBarGameObject.GetComponent<HealthBarScript>().health == 0)
+            {
+                endUi.SetActive(true);
+                Destroy(this.gameObject);
+            }
         }
     }
 
