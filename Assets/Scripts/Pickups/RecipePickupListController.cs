@@ -13,8 +13,10 @@ public class RecipePickupListController : MonoBehaviour
 {
     private GameObject dontDestroy;
 
-    //Punten bijhouden
-    [SerializeField] float amountOfRecipesInLevel;
+	[SerializeField] float nextLevelInt;
+
+	//Punten bijhouden
+	[SerializeField] float amountOfRecipesInLevel;
     [SerializeField] float amountOfApplesInLevel;
     private float applesCollected;
     private float recipesCollected;
@@ -89,8 +91,9 @@ public class RecipePickupListController : MonoBehaviour
 
             dontDestroy.GetComponent<DontDestroy>().AddTip(tipOfTheDayString);
             dontDestroy.GetComponent<DontDestroy>().AddRecipe(recipeName, recipeDescription, recipeImage);
+			dontDestroy.GetComponent<DontDestroy>().UnLocklevel(nextLevelInt);
 
-            return true;
+			return true;
         }
         else
         {
